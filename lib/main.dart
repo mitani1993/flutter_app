@@ -20,56 +20,40 @@ class MyApp extends StatelessWidget {
         children: <Widget>[
           Container(
             padding: EdgeInsets.only(top: 32),
-            child: Text('TextButton'),
+            child: Text('IconButton'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              TextButton(onPressed: null, child: Text('disabled')),
-              TextButton(onPressed: () {}, child: Text('enabled')),
-              TextButton(
-                style: TextButton.styleFrom(
-                  primary: Colors.red,
-                ),
-                onPressed: () {},
-                child: Text('enabled'),
-              ),
+              IconButton(onPressed: () {}, icon: Icon(Icons.thumb_up)),
+              IconButton(
+                  color: Colors.pink,
+                  onPressed: () {},
+                  icon: Icon(Icons.favorite)),
+              IconButton(
+                  iconSize: 64, onPressed: () {}, icon: Icon(Icons.flight)),
             ],
           ),
           Container(
             padding: EdgeInsets.only(top: 32),
-            child: Text('OutlineButton'),
+            child: Text('アイコンテキスト'),
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              OutlinedButton(onPressed: null, child: Text('disabled')),
-              OutlinedButton(onPressed: () {}, child: Text('enabled')),
-              OutlinedButton(
-                style: OutlinedButton.styleFrom(
-                  primary: Colors.red,
-                ),
+              TextButton.icon(
                 onPressed: () {},
-                child: Text('enabled'),
+                icon: Icon(Icons.thumb_up),
+                label: Text('Good'),
               ),
-            ],
-          ),
-          Container(
-            padding: EdgeInsets.only(top: 32),
-            child: Text('ElevatedButton'),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              ElevatedButton(onPressed: null, child: Text('disabled')),
-              ElevatedButton(onPressed: () {}, child: Text('enabled')),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
-                ),
-                onPressed: () {},
-                child: Text('enabled'),
-              ),
+              OutlinedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.favorite, color: Colors.pink),
+                  label: Text('Like')),
+              ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: Icon(Icons.flight),
+                  label: Text('Flight')),
             ],
           ),
         ],
